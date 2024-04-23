@@ -127,4 +127,11 @@ const isEven = (numb) => numb % 2 === 0
 // console.log(findMin([12, 52, 73, 98, 200, 12]))
 
 //findmax
-const findMax = (a) => 
+const findMax = (arr) => Math.max(...arr)
+
+// console.log(findMax([100, 900, 200, 400]))
+
+// he ** operator is the exponentiation operator.
+const calculateBMI = (weight, height) => weight / (height**2)
+
+// console.log(calculateBMI(90, 2))
