@@ -64,7 +64,7 @@ const gameName = new String(`Mohsin-hc`)
 // 07 => length: Returns the length of a string.
 // let companyName = new String(`Google PVT LTD`)
 
-// console.log(companyName.length) //Output: 14, no need of Brackets in ength
+// console.log(companyName.length) //Output: 14, no need of Brackets in length
 
 // 08 => The slice() method is used to extract a section of a string and returns it as a new string. 
 // It does not modify the original string. we can use it to extract a substring starting from a specified index 
