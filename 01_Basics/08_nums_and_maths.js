@@ -13,7 +13,7 @@
 // console.log(typeof stringNumber) // Output: string
 // console.log(typeof numericNumber)// Output: number
 
-// 02 => Syntax: The parseFloat() function is used to extract a numbere from a String.
+// 02 The parseFloat() function is used to extract a numbere from a String.
 // let string1 = "3.14"
 // let string2 = "42 is my room number"
 
@@ -24,9 +24,9 @@
 // let number2 = parseFloat(string2)
 
 // console.log(number1) // Output: 3.14
-// console.log(number2) // Output: 42
+// console.log(number2) // Output: 42 // only if number is at starting of the string.
 
-// 03 => isNaN(): The isNaN() function determines whether a value is NaN (Not-a-Number).
+// 03 The isNaN() function determines whether a value is NaN (Not-a-Number).
 
 // console.log(isNaN("abc")) //Output: true
 // console.log(isNaN("123")) //Output: false

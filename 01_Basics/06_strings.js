@@ -1,7 +1,7 @@
 const name = 'John';
 const age = 30;
 
-// console.log(name + rollNo + " anyValue"); // Outdated method
+// console.log(name + age + " anyValue"); // Outdated method
 
 //Sting Interpolation
 // console.log(`hello! my name is ${name} and my age is ${age} years old`) //Use Back tick which at the upper side of Tab key on keyboard.
@@ -15,9 +15,7 @@ const gameName = new String(`Mohsin-hc`)
 // console.log(gameName.__proto__); //used to see an object
 
 
-
-
-//***********Practice***********/
+//*********** Practice ***********//
 
 // let str = "Hello"
 // Another Syntax of Declaring a String
@@ -77,7 +75,7 @@ const gameName = new String(`Mohsin-hc`)
 
 
 // 09 => split(separator, limit): Splits a string into an array of substrings based on the specified separator. Optionally,
-//  you can specify a limit to how many splits to perform
+// we can specify a limit to how many splits to perform
 
 // let fruits = new String(`apple-banana-orange`)
 

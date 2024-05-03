@@ -4,7 +4,7 @@
 
 // const numbers = [1, 2, 3, 4]
 
-// const sum = numbers.reduce( function (acc, curval) {
+// const sum = numbers.reduce(function (acc, curval) {
 //   // console.log(`acc: ${acc} and curval: ${curval}`)
 //   return acc + curval
 // }, 0)

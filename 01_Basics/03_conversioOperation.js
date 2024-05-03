@@ -4,20 +4,18 @@ let score = "33abc"
 // console.log(typeof score)
 
 let valueInNumber = Number (score)
-// console.log(typeof valueInNumber)
+console.log(typeof valueInNumber)
 
-// console.log(valueInNumber) //NaN => Not a number, 33abc got converted into number but when see actual value in valueInNumber it is NaN
+// console.log(valueInNumber) //NaN => Not a number, 33abc got converted into number but when we see actual value in valueInNumber it is NaN
 
 
 let score2 = null
-// console.log(typeof score2)
+// console.log(typeof score2) //Output: Object
 
 let valueInScore = Number(score2) // so if we try to convert null it will give 0
-// console.log(typeof valueInScore)
-// console.log(valueInScore)
+// console.log(typeof valueInScore) //number
+// console.log(valueInScore) // 0
  
-
-
 
 let a = undefined;
 // console.log(typeof a) Here type is Undefined.
@@ -28,10 +26,10 @@ let valueInA = Number(a)
 
 
 let userId = true
-// console.log(typeof userId)
+// console.log(typeof userId) // Boolean
 let valueInId = Number(userId)
-// console.log(typeof valueInId)
-// console.log(valueInId)
+// console.log(typeof valueInId) // Number
+// console.log(valueInId) // 1 if true, 0 if false
 
 // "33" easily gets converted in 33
 // "33abc" NaN, Not a Number
@@ -48,7 +46,9 @@ let booleanIsLoggedIn = Boolean(isLoggedIn)
 // 1 => true  
 // 0 => false
 //"" => false  if we try to convert empty string it will give false
+// undefine, null and NaN all these will be false.
 //"mohsin" => true // when we give string with value it will give true
+// "0" is true
 
 
 //String conversion
@@ -56,7 +56,7 @@ let booleanIsLoggedIn = Boolean(isLoggedIn)
 let someNumber = 35
 let stringNumber = String(someNumber)
 
-// console.log(typeof stringNumber) // so, in this case the number 33 got converted into a string.
+// console.log(typeof stringNumber) // so, in this case the number 35 got converted into a string.
 // console.log(stringNumber); //output: 35
 
 // ************************* operations ******************************

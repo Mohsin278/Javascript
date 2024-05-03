@@ -1,6 +1,6 @@
 // While loop
 // A while loop is a control flow statement that allow us to repeatedly execute a block of code as long as a specified condition evaluates to true. 
-// It's useful when we don't know in advance how many times you need to iterate through the code.
+// It's useful when we don't know in advance how many times we need to iterate through the code.
 
 // The condition is evaluated before each iteration. If it evaluates to true, the loop continues; if it evaluates to false, the loop terminates.
 // The block of code inside the curly braces {} is executed as long as the condition is true.
@@ -15,16 +15,16 @@
 // Example
 // Sum of numbers using while loop
 
-// let number = 10
-// let storedSum = 0
-// let counter = 1
+let number = 10
+let storedSum = 0
+let counter = 1
 
-// while( counter <= number ){
-//   storedSum += counter
-//   counter++
-// }
+while( counter <= number ){
+  storedSum += counter
+  counter++
+}
 
-// console.log("Sum: ", storedSum)
+console.log("Sum: ", storedSum)
 
 // const myArray = [ "Mohsin", "Uzma", "Seerat"]
 // let i = 0

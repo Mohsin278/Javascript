@@ -25,7 +25,7 @@ let specificcDateOne = new Date (2024, 4, 3)
 // 0: Specifies the seconds.
 // 0: Specifies the milliseconds.
 
-let myCreatedDate = new Date.getTime()
+let myCreatedDate = new Date().getTime()
 // console.log(myCreatedDate.toLocaleString())
 
 let myTimeStamp = new Date(2024, 0, 24, 11, 30, 0, 0)

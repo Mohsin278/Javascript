@@ -5,7 +5,7 @@
 // const id = Symbol("123")
 // const anotherId1 = Symbol("123")
 
-// console.log(id === anotherId1) 
+// console.log(id === anotherId1) // false, because symbol is unique.
 const number = 15782676786781256n // by writing n at the end, it will now use bigInt.
 // console.log(typeof number)
 
@@ -13,7 +13,7 @@ const number = 15782676786781256n // by writing n at the end, it will now use bi
 
 // 1. **Stored directly in memory**:
 // When you declare a variable and assign it a primitive value, 
-// that value is stored directly in memory. Consider the following example:
+// that value is stored directly in memory(stack). Consider the following example:
 
 // let x = 42; // Assigning the number 42 to variable x
 

@@ -34,4 +34,4 @@ let password = 155223852
 userId = "Fida@155"
 password = 78367878656
 
-// console.table([firstName, lastName, userId, password, accountState])
+console.table([firstName, lastName, userId, password, accountState])
