@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM</title>
+  <style>
+    body {
+      background-color: #414141;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  
+
+
+</body>
+<script>
+  // const div = document.createElement('div')
+  // console.log(div)
+  // div.className = 'main'
+  // div.id = Math.round(Math.random() * 10 + 1)
+  // div.setAttribute("title", "Generated title")
+  // div.style.backgroundColor = 'green'
+  // div.style.color = '#fff'
+  // // div.innerHTML = "Mohsin Manzoor"
+
+  // //How to add Node 
+  // const addedText = document.createTextNode("Mohsin Manzoor")
+  // div.appendChild(addedText)
+  // document.body.appendChild(div)
+
+// Create New Element
+// document.createElement() method is used to create a new element. 
+// Pass the tag name of the element we want to create as an argument.
+
+  let newElement = document.createElement('div')
+// console.log(newElement)
+//setAttribute() is used to set attributes for the element.
+newElement.setAttribute('id', "mainId")
+newElement.setAttribute('class', 'mainClass')
+// console.log(newElement)
+
+//Set Content : If we want to add content to the new element, 
+// we can do so using properties like textContent or innerHTML or createTextNode() method.
+// newElement.innerHTML = 'Mohsin Manzoor' //OR
+
+const adedText = document.createTextNode("Mohsin Manzoor")
+// Append the Element to the DOM
+// To make the new element part of the document, we need to append it to an existing element in the DOM.
+newElement.appendChild(adedText)
+
+//Now we have to append the div to the body.
+document.body.appendChild(newElement)
+
+const listItems = document.createElement('ul')
+const appeList = listItems.appendChild(document.createElement('li'))
+
+appeList.appendChild(document.createTextNode('javascript'))
+
+
+</script>
+</html>

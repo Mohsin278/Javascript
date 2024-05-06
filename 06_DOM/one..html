@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM</title>
+  <style>
+    body {
+      background-color: #414141;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="bg-black">
+    <h1 id="title" class="heading">DOM learning on Chai and Code <span style="display: none;">test text</span></h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+
+    <h2>Lorem ipsum dolor sit.</h2>
+    <h2>Lorem ipsum dolor sit.</h2>
+    <h2>Lorem ipsum dolor sit.</h2>
+    <h2>Lorem ipsum dolor sit.</h2>
+    <h2>Lorem ipsum dolor sit.</h2>
+
+    <ul>
+      <li class="List_item">one</li>
+      <li class="List_item">two</li>
+      <li class="List_item">three</li>
+      <li class="List_item">four</li>
+    </ul>
+
+  </div>
+
+  <script>
+
+
+//Selecting an HTML element by targetting 'Id' and using css in it.
+  // const title = document.getElementById('title')
+  //   title.innerHTML = 'Mohsin Manzoor'
+  //   title.style.backgroundColor = 'Green'
+  //   title.style.borderRadius = '10px'
+    
+  // const myH2 = document.querySelectorAll('h2')
+  // myH2[3].style.backgroundColor = 'Green'
+
+  // myH2.forEach( (head) => {
+  //     head.style.color = 'Red'
+  //     head.style.border = ' 3px solid #fff'
+  // })
+
+  // **** Convert HTML Collection To Array *****//
+
+ const listItem = document.getElementsByClassName('List_item')
+ // So, list item is a HTMLCollection. remeber it
+
+ //Convert HTMLCollection into an Array.
+ const myConvertedArray  = Array.from(listItem) //Now, it is an Array, we Can use now array methods.
+
+ myConvertedArray.forEach( (li) => {
+  li.style.color = 'Green'
+  li.style.border = '2px solid #fff'
+  li.style.borderRadius = "5px"
+  li.style.padding = '5px'
+  li.style.margin = '5px'
+ })
+ 
+
+  </script>
+</body>
+</html>

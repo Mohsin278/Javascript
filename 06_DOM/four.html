@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Part 4</title>
+  <style>
+    body {
+      background-color: #414141;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <ul class="language">
+    <li>Mohsin</li>
+  </ul>
+</body>
+
+<script>
+
+// function addLanguage(langName) {
+//   const li = document.createElement('li')
+//   li.innerHTML = `${langName}`
+//   document.querySelector('.language').
+//   appendChild(li)
+// }
+// addLanguage('Python')
+// addLanguage('Java')
+// addLanguage('Typescript')
+
+// const heading = document.createElement('h2')
+// heading.appendChild(document.createTextNode('Best Languages of the Year'))
+// document.body.appendChild(heading)
+
+// function addLanguage(langName) {
+//   const li = document.createElement('li')
+//   li.appendChild(document.createTextNode(`${langName}`))
+//   document.querySelector('.language').appendChild(li)
+// } 
+// addLanguage('Python')
+// addLanguage('Java')
+
+
+function addName (personName) {
+  const li = document.createElement('li')
+  li.appendChild(document.createTextNode(`${personName}`))
+  document.querySelector('.language').appendChild(li)
+}
+
+addName('Seerat')
+addName('Uzma')
+
+
+</script>
+
+</html>

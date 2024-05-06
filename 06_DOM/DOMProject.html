@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chai aur code</title>
+</head>
+<body>
+  <button>FirstButton</button>
+  <button class="btn">SecondButton</button>
+
+  <script>
+    
+    // Change Title of the web page.
+    // console.log(document.title)
+    // document.title = "Mohsin Manzoor"
+
+    //**** The HTML element is converted into a Javascript object *****//
+    // console.log(typeof document.body)
+
+    // console.log(document.body.innerHTML)
+    // document.body.innerHTML = '<button>Submit</button>'
+
+    //method = function saved inside an object
+  const button = document.querySelector('button') //now this button element is a Javascript object
+    .innerHTML = 'Reset'
+    console.log(button)
+  
+
+  const button2 = document.querySelector('.btn')
+  .innerHTML = 'Submit'
+  console.log(button2)
+
+  </script>
+</body>
+</html>
