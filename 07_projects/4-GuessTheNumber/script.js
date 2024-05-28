@@ -1,94 +1,88 @@
-let randomNumber = parseInt(Math.random() * 100 + 1)
-const submit = document.querySelector('#subt')
+let randomNumber = Math.floor(Math.random() * 100 + 1)
+const submitBtn = document.querySelector('#subt')
 const userInput = document.querySelector('#guessField')
-const prevGues = document.querySelector('.pre-guesses')
-const remainedGuesses = document.querySelector('.guessesRemained')
+const prevGuesses = document.querySelector('.pre-guesses')
+const remainingGuesses = document.querySelector('.guessesRemained')
 const lowOrHigh = document.querySelector('.lowOrHi')
-const resetDiv = document.querySelector('.resultParas')
+const startOver = document.querySelector('.resultParas')
 
-// console.log(lowOrHigh)
-btn = document.createElement('button')
+const btn = document.createElement('button')
 
-
-//Guess will be stored here in the Array.
-let prevGueses = []
-
-//Total number of Guesses
+let prevGuess = []
 let numGuess = 1
 
-let playgame = true
+let playGame = true
 
-if(playgame){
-  submit.addEventListener('click', function(e) {
+if(playGame) {
+  submitBtn.addEventListener('click', (e) => {
     e.preventDefault()
-   const guess = parseInt(userInput.value)
-  //  console.log(guess)
-   validateGuess(guess)
+    const guess = parseInt(userInput.value)
+    validateUserGuess(guess)
   })
 }
 
-
-function validateGuess(guess) {
-  if(isNaN(guess) || guess<1 || guess > 100) {
+function validateUserGuess(guess) {
+  if(!guess) {
     alert('Please Enter a valid Number')
+  } else if(guess < 1) {
+    alert('Please Enter a Number Greater than 1')
+  } else if (guess > 100) {
+    alert('Please Enter a Number less than 100')
   } else {
-    prevGueses.push(guess)
-    if(numGuess > 10) {
-      cleanUpGuess(guess)
-      displayMessage(`Game Over, random Number was ${randomNumber}`)
-      endGame()
+    prevGuess.push(guess)
+    if(numGuess === 11) {
+      updateGuessDisplay(guess)
+      showFeedbackMessage(`Game over, Random number was ${randomNumber}`)
+      terminateGame()
     } else {
-      cleanUpGuess(guess)
-      checkGuess(guess)
+      updateGuessDisplay(guess)
+      evaluateGuess(guess)
     }
   }
 }
 
-function checkGuess(guess) {
+function evaluateGuess(guess) {
   if(guess === randomNumber) {
-    displayMessage(`You Guessed it Right`)
-    endGame()
+    showFeedbackMessage(`You Guessed it right`)
+    terminateGame()
   } else if (guess < randomNumber) {
-    displayMessage(`Number is too low`)
-  } else {
-    displayMessage(`Number is too high`)
+    showFeedbackMessage(`Number is too low`)
+  } else if (guess > randomNumber) {
+    showFeedbackMessage(`Number is too high`)
   }
 }
 
-function cleanUpGuess(guess) {
-    userInput.value = ''
-    prevGues.innerHTML += `${guess}, `
-    numGuess++
-    remainedGuesses.innerHTML = `${11 - numGuess}`
+function updateGuessDisplay(guess) {
+  userInput.value = ''
+  prevGuesses.innerHTML += `${guess}, `
+  numGuess++
+  remainingGuesses.innerText = `${11 - numGuess}`
 }
 
-function displayMessage(message) {
-    lowOrHigh.innerHTML = `<h2>${message}</h2>`
+function showFeedbackMessage(message) {
+  lowOrHigh.innerHTML = `<h2>${message}</h2>`
 }
 
-function endGame() {
+function terminateGame() {
   userInput.value = ''
   userInput.setAttribute('disabled', '')
-  btn.className = 'button'
-  btn.innerHTML = '<h5 id = "newgame">Start New Game</h5>'
-  resetDiv.appendChild(btn)
-  playgame = false
-  newGame()
-
+  btn.classList.add('newButton')
+  btn.innerHTML = 'Start New Game'
+  startOver.appendChild(btn)
+  playGame = false
+  initializedNewGame()
 }
 
-function newGame() {
-  const newGameButton = document.querySelector('#newgame')
-  newGameButton.addEventListener('click', function(){
-    randomNumber = parseInt(Math.random()*100 +1)
-    prevGueses = []
-    numGuess = 1
-    prevGues.innerHTML = ''
-    remainedGuesses.innerHTML = `${11, numGuess}`
+function initializedNewGame() {
+  const newGameBtn = document.querySelector('.newButton')
+  newGameBtn.addEventListener('click', function() {
+    randomNumber = Math.floor(Math.random() * 100 + 1)
+    prevGuess = []
+    prevGuesses.innerHTML = ''
+    remainingGuesses.innerHTML = ''
     userInput.removeAttribute('disabled')
-    resetDiv.remove(btn)
-
-    playgame = true
+    startOver.removeChild(btn)
+    playGame = 1
+    lowOrHigh.innerHTML = ''
   })
-
 }

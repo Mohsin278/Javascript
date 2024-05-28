@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+  <title>Document</title>
+</head>
+<body style="background-color: #414141; color: #fff;">
+  <h1>Chai Or Code</h1>
+  <button id="stop">Stop</button>
+</body>
+<script>
+  //1: Synchronous: Code is executed line by line.
+  // Each line waits for the previous line to finish executing.
+  // Example:
+  // console.log('Start')
+  // console.log('Middle')
+  // console.log('End')
+
+  //2: Code execution can be paused to wait for some operation to complete,
+  //allowing other code to run in the meantime.
+  //Example:
+
+  // console.log('Before setTimeout')
+
+  // setTimeout(() => {
+  //   console.log('Inside setTimeout')
+  // }, 3000)
+
+  // console.log('After setTimeout')
+
+ // Example 2: 
+    // function greet() {
+    //   console.log('Hello, world!')
+    // }
+
+    // setTimeout(greet, 4000)
+
+function changeText() {
+  document.querySelector('h1').
+  innerHTML = 'Mohsin Manzoor'
+}
+
+const changeMe = setTimeout(changeText, 2000)
+
+document.querySelector('#stop').
+addEventListener('click', () => {
+  clearTimeout(changeMe)
+  console.log('STOPPED')
+})
+
+</script>
+</html>

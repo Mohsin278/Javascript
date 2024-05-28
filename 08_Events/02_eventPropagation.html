@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Propagation</title>
+  <style>
+    #grandparent { padding: 20px; border: 2px solid red; width: 400px; }
+    #parent { padding: 20px; border: 2px solid green; width: 360px; }
+    #child { padding: 20px; border: 2px solid blue; width: 320px; }
+  </style>
+</head>
+<body>
+  <div id="grandparent">
+    Grandparent
+    <div id="parent">
+      Parent
+      <div id="child">
+        Child
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+// Event propagation is the way events travel through the DOM tree when they are fired.
+const grandparent = document.querySelector('#grandparent')
+const parent = document.querySelector('#parent')
+const child = document.querySelector('#child')
+
+// 1: Bubbling Phase: The event bubbles back up from the target element to the root of the DOM tree.
+// Bubbling phase: Target element -> ... -> <body> -> <html> -> Document -> Window
+
+grandparent.addEventListener('click', function() {
+  console.log('GrandParent--- Bubbling')
+},false)
+
+parent.addEventListener('click', function(event) {
+  console.log('Parent --- Bubbling')
+},false)
+
+child.addEventListener('click', function() {
+  console.log('Child --- Bubbling')
+},false)
+
+document.body.addEventListener('click', function() {
+  console.log('Body --- Bubbling')
+},false)
+
+// *** Output ***//
+// Child --- Bubbling
+// Parent --- Bubbling
+// GrandParent--- Bubbling
+// Body --- Bubbling
+// This shows that the event starts from the target element (child) and bubbles up to the outermost element (grandparent) during the bubbling phase.
+
+// 2: Capturing Phase: The event starts from the root of the DOM tree and travels down to the target element.
+// grandparent.addEventListener('click', function(event) {
+//   event.stopPropagation()
+//   // console.log('GrandParent --- Capturing')
+// },true)
+
+// parent.addEventListener('click', function(event) {
+//   // console.log('Parent --- Capturing')
+// },true)
+
+// child.addEventListener('click', function(event) {
+//   // console.log('Child --- Capturing')
+// },true)
+
+// document.body.addEventListener('click', function() {
+//   // console.log('Body --- Capturing')
+// }, true)
+
+// Body --- Capturing
+// GrandParent --- Capturing
+// Parent --- Capturing
+// Child --- Capturing
+// This shows that the event starts from the outermost element (grandparent) and travels inward to the target element (child) during the capturing phase.
+
+// stopPropagation()
+// We can stop the event from propagating (bubbling up) to parent elements by using the stopPropagation() method.
+
+// stopImmediatePropagation()
+// This method stops the event from propagating and also prevents any other listeners on the same element from being executed
+</script>
+</html>

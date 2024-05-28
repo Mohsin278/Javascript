@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown Timer</title>
+</head>
+<body>
+  <input type="number" id="inputTime" placeholder="Enter Seconds">
+  <button id="start">Start</button>
+  <button id="stop">Stop</button>
+  <p><span id="displayTime">Time Remaining: 0</span></p>
+</body>
+<script>
+  let countdownInterval
+  document.querySelector('#start'). 
+  addEventListener('click', () => {
+    let inputTime = parseInt(document.querySelector('#inputTime').value)
+    const displayTimer = document.querySelector('#displayTime')
+
+   countdownInterval = setInterval(() => {
+      if(inputTime > 0) {
+        inputTime --
+        displayTimer.textContent = `Time Remaining: ${inputTime}`
+      } else {
+        clearInterval(countdownInterval)
+        displayTimer.textContent = `Time is up!`
+      }
+    }, 1000)
+  })
+
+  document.querySelector('#stop'). 
+  addEventListener('click', () => {
+    clearInterval(countdownInterval)
+  })
+</script>
+</html>

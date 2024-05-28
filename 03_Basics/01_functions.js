@@ -10,13 +10,12 @@
 // addTwoNumbers(10, "20")
 // addTwoNumbers("20", "24")
 // addTwoNumbers(71, "M")
-// addTwoNumbers(" ")
+// addTwoNumbers(" ") //Undefined
 
 //Also when calling a function we can store the result in a Varaible.
-// function addTwoNumbers(number1, number2){
-//   console.log(number1 + number2)
+// function addTwoNumbers(number1, number2) {
+//       // console.log(number1 + number2)
 // }
-
 // const result = addTwoNumbers(4, 5)
 // console.log(result)
 // So, we try to print result it will give output as Undefined.
@@ -163,8 +162,8 @@ function arrayValues(anyArray){
   return anyArray[2]
 }
 
-console.log(arrayValues(myNewArray))
-console.log(arrayValues(secondArray))
+// console.log(arrayValues(myNewArray))
+// console.log(arrayValues(secondArray))
 
 //Passing array directly while calling function.
-console.log(arrayValues([10, 52, 17, 45]))
+// console.log(arrayValues([10, 52, 17, 45]))

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random BackgroundColor Generator</title>
+</head>
+<body>
+  <h2>Click buttons to Change or stop changing Background Color</h2>
+  <button id="start">Start</button>
+  <button id="stop">Stop</button>
+</body>
+<script>
+randomColor = () => {
+  const Hex = '0123456789ABCDEF'
+  color = "#"
+
+  for(let i = 0; i < 6; i++) {
+    color += Hex[Math.floor(Math.random() * 16)]
+  }
+  return color
+}
+
+let interChange
+
+startChangingColor = () => {
+  interChange = setInterval( () => {
+    document.body.style.backgroundColor = randomColor()
+  }, 1000)
+}
+
+stopChangingColor = () => {
+  clearInterval(interChange)
+  interChange = null
+}
+
+document.querySelector('#start'). 
+addEventListener('click', startChangingColor)
+
+document.querySelector('#stop'). 
+addEventListener('click', stopChangingColor)
+
+</script>
+</html>

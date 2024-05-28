@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Font Size Changing</title>
+</head>
+<body>
+  <button id="start">Start</button>
+  <button id="stop">Stop</button>
+  <p id="text">This text will change its font size.</p>
+</body>
+<script>
+
+  let fontInterval
+
+  document.querySelector('#start'). 
+  addEventListener('click', () => {
+    fontInterval = setInterval( () => {
+      const text = document.querySelector('#text')
+      const currenSize = window.getComputedStyle(text).fontSize 
+      const newSize = parseInt(currenSize) + 1 + 'px'
+      text.style.fontSize = newSize
+    }, 1000)
+  })
+
+  document.querySelector('#stop'). 
+  addEventListener('click', function() {
+    clearInterval(fontInterval)
+  })
+</script>
+</html>

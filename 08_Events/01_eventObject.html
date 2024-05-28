@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events</title>
+  <style>
+   
+  </style>
+</head>
+<body style="background-color: #414141; color: aliceblue; height: 800px;">
+  <button id="btn">Click Me</button>
+  <a href="www.Instagram.con" id="Inst-link">Instagram</a>
+</body>
+<script>
+// When an event occurs (like a click or a key press), the browser creates an event object that 
+// contains details about the event. This object is automatically passed as an argument to the event handler function.
+
+//***Key Properties and Methods of the Event Object***//
+
+// 1: type: 
+const button = document.querySelector('#btn')
+
+// button.addEventListener('click', function(event) {
+//   console.log(event.type)  //'click'
+// })
+
+// 2:'target:'This property refers to the element that triggered the event. It is the element where the event originated.
+
+// Example 1
+// document.addEventListener('click', function(event) {
+//   console.log('Target:', event.target)
+// })
+
+//Example 2
+// button.addEventListener('click', function(event){
+//   console.log(event.target) //</html><button id="btn">Click Me</button>
+// })
+
+// 3:preventdefault: Prevents the default action associated with the event (e.g., following a link or submitting a form).
+// const link = document.querySelector('#Inst-link')
+// link.addEventListener('click', function(event) {
+//   event.preventDefault() // We can click the link but nothing is going to happen.
+// })
+
+// 4:'clientX' and 'clientY':They provide the position of the mouse pointer in relation to the viewport (the visible area of the web page).
+// document.addEventListener('click', function(event) {
+//   const x = event.clientX
+//   const y = event.clientY
+//   alert(`Mouse coordinates: ${x}, ${y}`)
+// })
+
+// 5: key(For Keyboard events)
+// document.addEventListener('keydown', function(event) {
+//   alert(`Key pressed: ` + event.key)
+// })
+
+// 6: 'timpestamp': This property gives the time (in milliseconds) when the event was created.
+// It provides the number of milliseconds since the page started loading until the event occurred.
+
+// let startTime;
+// button.addEventListener('mousedown', function(event) {
+//   startTime = event.timeStamp
+//   console.log(`Button pressed at: ${startTime} milliseconds`)
+// })
+
+// button.addEventListener('mouseup', function(event) {
+//   const endTime = event.timeStamp
+//   console.log(`Button released at: ${endTime} milliseconds`)
+//   const elapsedTime = endTime - startTime
+//   console.log(`Time elapsed: ${elapsedTime} milliseconds`)
+// })
+
+
+// 7: 'screenX and screenY': provide the coordinates of the mouse pointer relative to the entire screen when a mouse event occurs within the browser window.
+
+// document.addEventListener('click', function(event) {
+//   alert(`Mouse coordinates are ${event.screenX} ${event.screenY}`)
+// })
+
+// Example of Both
+// document.addEventListener('click', function(event) {
+//   const screenX = event.screenX
+//   const screenY = event.screenY
+//   const clientX = event.clientX
+//   const clientY = event.clientY
+
+//   alert(`Screen: ${screenX} ${screenY} \n Viewport: ${clientX} ${clientY}`)
+// })
+
+// 8: This property is used in mouse events (such as mouseover and mouseout). It refers to the element that the mouse pointer is moving towards.
+
+// 9: keyCode:
+// document.body.addEventListener('keydown', function(event) {
+//   alert(event.keyCode)
+// })
+
+// If shift key is pressed it will alert 'Helloooo' similarly we can do for 'altkey', 'ctrlkey' etc
+// document.addEventListener('keydown', function(event) {
+//   if(event.shiftKey) return alert(`Helloooo`)
+// })
+
+</script>
